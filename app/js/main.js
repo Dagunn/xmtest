@@ -91,7 +91,6 @@ const initForm = {
     submitBtn: document.querySelector('.js-register__btn'),
     successBox: document.querySelector('.js-success'),
     controlEmail: document.querySelector('.js-form__control-email'),
-    successBox: document.querySelector('.js-success'),
     controlLength: document.querySelector('.js-register__length'),
     controlDigit: document.querySelector('.js-register__digit'),
     controlLower: document.querySelector('.js-register__lower'),
@@ -248,10 +247,10 @@ const initForm = {
         setTimeout(() => {
           this.formItems.successBox.classList.remove('hidden')
         }, 1000)
-        setTimeout(() => {
-          this.formItems.successBox.classList.add('hidden')
-        }, 10000)
-      }
+          setTimeout(() => {
+            this.formItems.successBox.classList.add('hidden')
+          }, 10000)
+        }
     });
   }
 }
