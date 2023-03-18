@@ -1,0 +1,19 @@
+.grid {
+  display: grid;
+  align-content: flex-start;
+}
+
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.flex-between {
+  @extend .flex;
+  justify-content: space-between;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}

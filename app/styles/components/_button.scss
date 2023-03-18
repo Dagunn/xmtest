@@ -1,0 +1,30 @@
+.button {
+    max-width: 335px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: var(--fz);
+    padding: 6px 75px;
+    background-color:var(--primaryGreen);
+    color: var(--white);
+    cursor: pointer;
+    margin-bottom: 25px;
+
+    @include media(xs) {
+        padding: 6px 92px;
+    }
+
+    &--wide {
+        max-width: 454px;
+        width: 100%;
+
+        @include media(xs) {
+            max-width: 335px;
+        }
+    }
+
+    &--reg {
+        &.disabled {
+            background-color: var(--disabled);
+            pointer-events: none;
+        }
+    }
+}
