@@ -130,12 +130,17 @@
                             <div class="text-left">
                                 <label for="email" class="register__label fz14">Email:</label>
                                 <div class="register__message">
-                                    <input class="register__input js-form__email fz14" type="text">
+                                    <input class="register__input js-form__email fz14" id="email" type="text">
                                 </div>
                                 
                                 <div class="register__control js-form__control-email hidden">
                                     <div class="register__control-hint"> 
-                                        <p class="register__control-text"><small>Please enter a valid Email</small></p> 
+                                        <p class="register__control-text redTxt">
+                                            <svg class="register__check" width="9" height="9">
+                                                <use xlink:href="images/svg-sprite/icons.svg#control-icon"></use>
+                                            </svg>
+                                            <small>Please enter a valid Email</small>
+                                        </p> 
                                     </div>
                                 </div>
                             </div>
@@ -143,24 +148,52 @@
                             <div class="text-left">
                                 <label for="password" class="register__label fz14">Password:</label>
                                 <div class="register__message">
-                                    <input class="register__input js-form__password fz14" >
+                                    <input class="register__input js-form__password fz14" id="password" type="password">
                                 </div>
                                 
                                 <div class="register__control"> 
                                     <div class="register__hint"> 
                                         <ul class="register__list"> 
-                                            <li class="register__control-text js-register__controlTxt-0"><small>Minimum 8 characters</small></li> 
-                                            <li class="register__control-text js-register__controlTxt-1"><small>At least one digit</small></li> 
-                                            <li class="register__control-text js-register__controlTxt-2"><small>At least one lower case letter</small></li> 
-                                            <li class="register__control-text js-register__controlTxt-3"><small>At least one upper case letter</small></li> 
-                                            <li class="register__control-text js-register__controlTxt-4"><small>At least one special character</small></li> 
+                                            <li class="register__control-text js-register__length redTxt">
+                                                <svg class="register__check" width="9" height="9">
+                                                    <use xlink:href="images/svg-sprite/icons.svg#control-icon"></use>
+                                                </svg>
+                                                <small>Minimum 8 characters</small>
+                                            </li> 
+
+                                            <li class="register__control-text js-register__digit redTxt">
+                                                <svg class="register__check" width="9" height="9">
+                                                    <use xlink:href="images/svg-sprite/icons.svg#control-icon"></use>
+                                                </svg>
+                                                <small>At least one digit</small>
+                                            </li> 
+
+                                            <li class="register__control-text js-register__lower redTxt">
+                                                <svg class="register__check" width="9" height="9">
+                                                    <use xlink:href="images/svg-sprite/icons.svg#control-icon"></use>
+                                                </svg>
+                                                <small>At least one lower case letter</small>
+                                            </li> 
+
+                                            <li class="register__control-text js-register__upper redTxt">
+                                                <svg class="register__check" width="9" height="9">
+                                                    <use xlink:href="images/svg-sprite/icons.svg#control-icon"></use>
+                                                </svg>
+                                                <small>At least one upper case letter</small>
+                                            </li> 
+
+                                            <li class="register__control-text js-register__special redTxt">
+                                                <svg class="register__check" width="9" height="9">
+                                                    <use xlink:href="images/svg-sprite/icons.svg#control-icon"></use>
+                                                </svg><small>At least one special character</small>
+                                            </li> 
                                         </ul> 
                                     </div> 
                                 </div>
                             </div>
                         </div>
 
-                        <div class="success text-left js-success">
+                        <div class="success text-left js-success hidden">
                             <div class="flex success__cont">
                                 <svg class="success__icon" width="52" height="52">
                                     <use xlink:href="images/svg-sprite/icons.svg#success"></use>
@@ -174,7 +207,7 @@
                             </div>
                         </div>
     
-                        <button class="button button--wide textUp js-register__btn" type="submit">Register now</button>
+                        <button class="button button--wide button--reg disabled textUp js-register__btn" type="submit">Register now</button>
                         <p class="account fz14">Don’t have an account? <a href="#" class="redTxt">Create one here</a> and register for the event</p>
                         <small class="terms">Terms and Conditions apply<span class="redTxt">*</span>. To read the full T&Cs, <a href="#" class="redTxt">click here.</a></small>
                     </form>
@@ -228,8 +261,8 @@
             <div class="container">
                 <div class="advantage">
                     <div class="grid advantage__cont advantage__cont--big">
-                        <h3 class="advantage__title advantage__title--big showMd">Big<span class="redTxt">.</span> <br> Fair<span class="redTxt">.</span><br>Human<span class="redTxt">.</span></h3>
-                        <h3 class="advantage__title advantage__title--big hideMd">Big<span class="redTxt">.</span> Fair<span class="redTxt">.</span> Human<span class="redTxt">.</span></h3>
+                        <h3 class="advantage__title advantage__title--big advantage__title--desc">Big<span class="redTxt">.</span> <br> Fair<span class="redTxt">.</span><br>Human<span class="redTxt">.</span></h3>
+                        <h3 class="advantage__title advantage__title--big advantage__title--mob">Big<span class="redTxt">.</span> Fair<span class="redTxt">.</span> Human<span class="redTxt">.</span></h3>
                         <p class="advantage__text advantage__text--big">Learn why <strong>over 5 million clients choose XM </strong> as their trusted online broker.</p>
                     </div>
                    
@@ -278,41 +311,41 @@
         <footer class="footer">
             <div class="container">
                 <div class="flex-between footer__info flex-wrap showLg">
-                    <div class="footer__logos flex">
-                        <img class="footer__logos-img" srcset="images/logos/meta.png 1x, images/logos/meta@2x.png 2x" src="images/logos/meta.png"  alt="meta" width="136" height="25" loading="lazy">
-                        <img class="footer__logos-img" srcset="images/logos/verisign.png 1x, images/logos/verisign@2x.png 2x" src="images/logos/verisign.png"  alt="verisign" width="131" height="36" loading="lazy">
-                        <img class="footer__logos-img" srcset="images/logos/unisef.png 1x, images/logos/unisef@2x.png 2x" src="images/logos/unisef.png"  alt="unisef" width="110" height="38" loading="lazy">
-                        <img class="footer__logos-img" srcset="images/logos/investors.png 1x, images/logos/investors@2x.png 2x" src="images/logos/investors.png"  alt="investors" width="195" height="38" loading="lazy">
+                    <div class="logos flex">
+                        <img class="logos__img" srcset="images/logos/meta.png 1x, images/logos/meta@2x.png 2x" src="images/logos/meta.png"  alt="meta" width="136" height="25" loading="lazy">
+                        <img class="logos__img" srcset="images/logos/verisign.png 1x, images/logos/verisign@2x.png 2x" src="images/logos/verisign.png"  alt="verisign" width="131" height="36" loading="lazy">
+                        <img class="logos__img" srcset="images/logos/unisef.png 1x, images/logos/unisef@2x.png 2x" src="images/logos/unisef.png"  alt="unisef" width="110" height="38" loading="lazy">
+                        <img class="logos__img" srcset="images/logos/investors.png 1x, images/logos/investors@2x.png 2x" src="images/logos/investors.png"  alt="investors" width="195" height="38" loading="lazy">
                     </div>
 
-                    <div class="flex footer__social">
+                    <div class="flex social">
                         <p class="fz14 textGrey">Follow us on</p>
-                        <a class="footer__social-link" href="https://facebook.com">
-                            <svg class="footer__social-icon" width="40" height="17">
+                        <a class="social__link" href="https://facebook.com">
+                            <svg class="social__icon" width="40" height="17">
                                 <use xlink:href="images/svg-sprite/icons.svg#facebook"></use>
                             </svg>
                         </a>
                         
-                        <a class="footer__social-link" href="https://twitter.com">
-                            <svg class="footer__social-icon" width="35" height="20">
+                        <a class="social__link" href="https://twitter.com">
+                            <svg class="social__icon" width="35" height="20">
                                 <use xlink:href="images/svg-sprite/icons.svg#twitter"></use>
                             </svg>
                         </a>
 
-                        <a class="footer__social-link" href="https://youtube.com">
-                            <svg class="footer__social-icon" width="35" height="20">
+                        <a class="social__link" href="https://youtube.com">
+                            <svg class="social__icon" width="35" height="20">
                                 <use xlink:href="images/svg-sprite/icons.svg#youtube"></use>
                             </svg>
                         </a>
 
-                        <a class="footer__social-link" href="https://instagram.com">
-                            <svg class="footer__social-icon" width="30" height="20">
+                        <a class="social__link" href="https://instagram.com">
+                            <svg class="social__icon" width="30" height="20">
                                 <use xlink:href="images/svg-sprite/icons.svg#instagram"></use>
                             </svg>
                         </a>
 
-                        <a class="footer__social-link" href="https://linkenin.com">
-                            <svg class="footer__social-icon" width="32" height="20">
+                        <a class="social__link" href="https://linkenin.com">
+                            <svg class="social__icon" width="32" height="20">
                                 <use xlink:href="images/svg-sprite/icons.svg#linkedin"></use>
                             </svg>
                         </a>
@@ -320,13 +353,13 @@
                 </div>
             </div>
 
-            <div class="footer__policy">
+            <div class="policy">
                 <div class="container">
-                    <div class="flex-between">
+                    <div class="flex flex-wrap policy__wrap">
                         <div class="flex">
-                            <a class="footer__policy-link textGrey" href="#"><small>Privacy Policy</small></a>|
-                            <a class="footer__policy-link textGrey" href="#"><small>Cookie Policy</small></a>
-                            <a class="footer__policy-link textGrey" href="#"><small>Terms and Conditions</small></a>
+                            <a class="policy__link textGrey" href="#"><small>Privacy Policy</small></a>
+                            <a class="policy__link textGrey" href="#"><small>Cookie Policy</small></a>
+                            <a class="policy__link textGrey" href="#"><small>Terms and Conditions</small></a>
                         </div>
 
                         <img srcset="images/logos/trading.png 1x, images/logos/trading@2x.png 2x" src="images/logos/trading.png"  alt="trading" width="182" height="57" loading="lazy">
